@@ -1,0 +1,61 @@
+{
+  "name": "wtda",
+  "description": "本地数据同步",
+  "version": "0.0.1",
+  "author": "Wen Tao<mail.wentao@gmail.com>",
+  "bin": {
+    "wtda": "./bin/run --max-old-space-size=2048"
+  },
+  "bugs": "https://github.com/wentao75/wtda/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3",
+    "axios": "^0.19.2",
+    "lodash": "^4.17.15",
+    "moment": "^2.25.3",
+    "numeral": "^2.0.6",
+    "pino": "^6.2.1",
+    "pino-pretty": "^4.0.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "chai": "^4",
+    "eslint": "^5.13",
+    "eslint-config-oclif": "^3.1",
+    "globby": "^10",
+    "mocha": "^5",
+    "nyc": "^14"
+  },
+  "engines": {
+    "node": ">=10.1.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/wentao75/wtda",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "wtda",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "wentao75/wtda",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
