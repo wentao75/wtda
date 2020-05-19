@@ -1,5 +1,4 @@
-wtda
-====
+# wtda
 
 本地数据同步
 
@@ -9,11 +8,15 @@ wtda
 [![License](https://img.shields.io/npm/l/wtda.svg)](https://github.com/wentao75/wtda/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+-   [Usage](#usage)
+-   [Commands](#commands)
 <!-- tocstop -->
-# Usage
+
+# 用法
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g wtda
 $ wtda COMMAND
@@ -25,13 +28,17 @@ USAGE
   $ wtda COMMAND
 ...
 ```
+
 <!-- usagestop -->
-# Commands
+
+# 命令
+
 <!-- commands -->
-* [`wtda clear`](#wtda-clear)
-* [`wtda help [COMMAND]`](#wtda-help-command)
-* [`wtda test`](#wtda-test)
-* [`wtda update`](#wtda-update)
+
+-   [`wtda clear`](#wtda-clear)
+-   [`wtda help [COMMAND]`](#wtda-help-command)
+-   [`wtda test`](#wtda-test)
+-   [`wtda update`](#wtda-update)
 
 ## `wtda clear`
 
@@ -105,4 +112,5 @@ DESCRIPTION
 ```
 
 _See code: [src/commands/update.js](https://github.com/wentao75/wtda/blob/v0.0.1/src/commands/update.js)_
+
 <!-- commandsstop -->

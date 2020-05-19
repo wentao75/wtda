@@ -3,18 +3,14 @@ const pino = require("pino");
 const { updateData } = require("@wt/lib-wtda");
 
 const logger = pino({
-    // level: "debug",
+    level: process.env.LOGGER || "info",
     prettyPrint: {
         levelFirst: true,
-        translateTime: "SYS:standard",
+        translateTime: "SYS:yyyy-yy-dd HH:MM:ss.l",
         crlf: true,
     },
     prettifier: require("pino-pretty"),
 });
-
-if (process.env.LOGGER) {
-    logger.level = process.env.LOGGER;
-}
 
 class UpdateCommand extends Command {
     async run() {
@@ -28,15 +24,25 @@ class UpdateCommand extends Command {
         if (flags.adj) {
             logger.debug("更新股票复权因子数据");
         }
+        if (flags.basic) {
+            logger.debug("更新股票基本面数据");
+        }
         if (flags.index) {
             logger.debug("更新指数日线数据");
         }
-        if (flags.index) {
+        if (flags.all) {
             logger.debug("更新全部数据");
         }
 
         // console.time("更新数据");
-        updateData(force, flags.stock, flags.adj, flags.index, flags.all);
+        updateData(
+            force,
+            flags.stock,
+            flags.adj,
+            flags.basic,
+            flags.index,
+            flags.all
+        );
         // console.timeEnd("更新数据");
     }
 }
@@ -63,6 +69,11 @@ UpdateCommand.flags = {
     adj: flags.boolean({
         char: "j",
         description: "更新股票复权因子数据",
+        default: false,
+    }),
+    basic: flags.boolean({
+        char: "b",
+        description: "更新股票基本面数据",
         default: false,
     }),
     index: flags.boolean({
