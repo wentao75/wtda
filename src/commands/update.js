@@ -21,27 +21,27 @@ class UpdateCommand extends Command {
         if (flags.stock) {
             logger.debug("更新股票日线数据");
         }
-        if (flags.adj) {
-            logger.debug("更新股票复权因子数据");
+        if (flags.finance) {
+            logger.debug("更新股票财务数据");
         }
-        if (flags.basic) {
-            logger.debug("更新股票基本面数据");
+        if (flags.mainbiz) {
+            logger.debug("更新股票主营业务数据");
         }
         if (flags.index) {
-            logger.debug("更新指数日线数据");
+            logger.debug("更新指数数据");
         }
-        if (flags.all) {
-            logger.debug("更新全部数据");
-        }
+        // if (flags.all) {
+        //     logger.debug("更新全部数据");
+        // }
 
         // console.time("更新数据");
         updateData(
             force,
             flags.stock,
-            flags.adj,
-            flags.basic,
-            flags.index,
-            flags.all
+            flags.finance,
+            flags.mainbiz,
+            flags.index
+            // flags.all
         );
         // console.timeEnd("更新数据");
     }
@@ -63,29 +63,29 @@ UpdateCommand.flags = {
     //list: flags.boolean({ char: "l", description: "仅更新列表信息" }),
     stock: flags.boolean({
         char: "s",
-        description: "更新股票日线数据",
+        description: "更新股票信息数据",
         default: false,
     }),
-    adj: flags.boolean({
-        char: "j",
-        description: "更新股票复权因子数据",
+    finance: flags.boolean({
+        char: "n",
+        description: "更新股票财务数据",
         default: false,
     }),
-    basic: flags.boolean({
-        char: "b",
-        description: "更新股票基本面数据",
+    mainbiz: flags.boolean({
+        char: "m",
+        description: "更新主营业务数据",
         default: false,
     }),
     index: flags.boolean({
         char: "i",
-        description: "更新指数日线数据",
+        description: "更新指数数据",
         default: false,
     }),
-    all: flags.boolean({
-        char: "a",
-        description: "更新包括全部指数数据",
-        default: false,
-    }),
+    // all: flags.boolean({
+    //     char: "a",
+    //     description: "更新包括全部指数数据",
+    //     default: false,
+    // }),
 };
 
 module.exports = UpdateCommand;
