@@ -27,6 +27,12 @@ class UpdateCommand extends Command {
         if (flags.mainbiz) {
             logger.debug("更新股票主营业务数据");
         }
+        if (flags.dividend) {
+            logger.debug("更新股票分红送股数据");
+        }
+        if (flags.pledge) {
+            logger.debug("更新股票股权质押数据");
+        }
         if (flags.index) {
             logger.debug("更新指数数据");
         }
@@ -40,6 +46,8 @@ class UpdateCommand extends Command {
             flags.stock,
             flags.finance,
             flags.mainbiz,
+            flags.dividend,
+            flags.pledge,
             flags.index
             // flags.all
         );
@@ -74,6 +82,16 @@ UpdateCommand.flags = {
     mainbiz: flags.boolean({
         char: "m",
         description: "更新主营业务数据",
+        default: false,
+    }),
+    dividend: flags.boolean({
+        char: "d",
+        description: "更新分红送股数据",
+        default: false,
+    }),
+    pledge: flags.boolean({
+        char: "p",
+        description: "更新股权质押数据",
         default: false,
     }),
     index: flags.boolean({
