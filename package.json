@@ -12,6 +12,7 @@
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
     "axios": "^0.19.2",
+    "cli-ux": "^5.4.6",
     "lodash": "^4.17.15",
     "moment": "^2.25.3",
     "numeral": "^2.0.6",
