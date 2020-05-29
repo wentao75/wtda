@@ -2,11 +2,12 @@ const { Command, flags } = require("@oclif/command");
 const pino = require("pino");
 const {
     updateStockInfoData,
-    stockDataNames,
-    updateDailyData,
-    updateAdjustFactorData,
-    updateDailyBasicData,
+    // updateDailyData,
+    // updateAdjustFactorData,
+    // updateDailyBasicData,
 } = require("@wt/lib-wtda");
+
+const { stockDataNames } = require("@wt/lib-wtda-query");
 
 const logger = pino({
     level: process.env.LOGGER || "info",
