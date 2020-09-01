@@ -67,9 +67,9 @@ ${rules_desc}
     }
 }
 
-SimCommand.description = `Describe the command here
+SimCommand.description = `数据分析模拟
 ...
-数据分析算法入口
+数据分析模拟入口
 `;
 
 SimCommand.flags = {

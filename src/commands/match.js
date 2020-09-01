@@ -24,7 +24,7 @@ class MatchCommand extends Command {
     }
 }
 
-MatchCommand.description = `Describe the command here
+MatchCommand.description = `查找匹配规则/模式
 ...
 根据配置查找符合规则/模式的数据
 `;
