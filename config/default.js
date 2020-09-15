@@ -2,6 +2,7 @@ const { rules } = require("@wt/lib-stock");
 
 module.exports = {
     // 基本数据设置
+    all: true,
     startDate: "20190101", // 模拟计算的启动日期
     fixCash: true, // 是否固定头寸
     initBalance: 1000000, // 初始资金余额 或 固定头寸金额
@@ -9,7 +10,7 @@ module.exports = {
     showWorkdays: false,
 
     // 算法选择
-    rule: rules.smashday,
+    rule: rules.squeeze,
 
     // 基准测试
     rules: {
@@ -50,6 +51,19 @@ module.exports = {
             validDays: 3,
             type: "smash1",
         },
+    },
+
+    squeeze: {
+        source: "close",
+        ma: "ma",
+        n: 20,
+        bm: 2,
+        km: 1.5,
+        mt: "MTM",
+        mn: 5,
+        mm: 12,
+        mmsource: "hl",
+        needSell: false,
     },
 
     selectedStocks: [
