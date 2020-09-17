@@ -15,6 +15,7 @@ const logger = pino({
 class UpdateCommand extends Command {
     async run() {
         const { flags } = this.parse(UpdateCommand);
+        logger.debug(`flags: %o`, flags);
         const force = flags.force;
         if (force) logger.debug("强制更新全部数据");
         else logger.debug("更新数据");

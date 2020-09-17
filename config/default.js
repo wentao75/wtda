@@ -55,7 +55,7 @@ module.exports = {
 
     squeeze: {
         source: "close",
-        ma: "ma",
+        ma: "ema", // "ma",
         n: 20,
         bm: 2,
         km: 1.5,
