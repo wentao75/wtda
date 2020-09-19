@@ -14,10 +14,14 @@ module.exports = {
 
     // 基准测试
     rules: {
-        buy: [rules.outsideday],
+        buy: [rules.squeeze],
+        //buy: [rules.outsideday],
         // buy: [rules.benchmark],
-        sell: [rules.stoploss, rules.opensell],
+        sell: [rules.stoploss, rules.squeeze], //rules.opensell],
         // sell: [rules.benchmark],
+    },
+    stoploss: {
+        S: 0.1, // 止损比例
     },
     // mmb
     // rules: {
@@ -32,9 +36,6 @@ module.exports = {
         nommb2: true, //  是否动能突破买入符合禁止卖出
         // nommbsell: flags.nommbsell, // 如果动能突破，则禁止卖出
         mmbType: "hl", // 波幅类型，hc, hl
-    },
-    stoploss: {
-        S: 0.1, // 止损比例
     },
     benchmark: {
         sellPrice: "open", //"close", // 卖出价位
@@ -62,20 +63,39 @@ module.exports = {
         mt: "MTM",
         mn: 12,
         mm: 1,
-        mmsource: "hl",
+        tn: 5,
+        tm: 21,
+        tl: 34,
         needSell: false,
     },
 
+    ttmwave: {
+        n: 5,
+        ma: 21,
+        la: 34,
+        mb: 55,
+        lb: 89,
+        mc: 144,
+        lc: 233,
+        useb: true,
+        usec: true,
+        source: "close",
+        digits: 3,
+    },
+
     selectedStocks: [
-        "600489.SH", // 中金黄金
-        "600276.SH", // 恒瑞医药
-        "600363.SH", // 联创光电
-        "000725.SZ", // 京东方A
-        "600298.SH", // 安琪酵母
-        "300027.SZ", // 华谊兄弟
-        "600511.SH", // 国药股份
-        "601606.SH", // 长城军工
-        "601628.SH", // 中国人寿
-        "000568.SZ", // 泸州老窖
+        // "601318.SH", // 中国平安
+        "600036.SH", // 招商银行
+        // "601208.SH", // 东材科技
+        // "600489.SH", // 中金黄金
+        // "600276.SH", // 恒瑞医药
+        // "600363.SH", // 联创光电
+        // "000725.SZ", // 京东方A
+        // "600298.SH", // 安琪酵母
+        // "300027.SZ", // 华谊兄弟
+        // "600511.SH", // 国药股份
+        // "601606.SH", // 长城军工
+        // "601628.SH", // 中国人寿
+        // "000568.SZ", // 泸州老窖
     ],
 };
