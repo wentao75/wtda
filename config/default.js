@@ -6,11 +6,14 @@ module.exports = {
     startDate: "20190101", // 模拟计算的启动日期
     fixCash: true, // 是否固定头寸
     initBalance: 1000000, // 初始资金余额 或 固定头寸金额
-    showTrans: false,
+    showTrans: true,
     showWorkdays: false,
 
-    // 算法选择
-    rule: rules.squeeze,
+    // 匹配算法选择
+    match: {
+        rule: rules.squeeze,
+        report: rules.squeeze,
+    },
 
     // 基准测试
     rules: {

@@ -20,7 +20,7 @@ class MatchCommand extends Command {
         const options = require("config");
         if (flags.startdate) options.startDate = flags.startdate;
 
-        await search(options);
+        await search.search(options);
     }
 }
 
