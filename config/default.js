@@ -5,7 +5,7 @@ const stockList = require("./hs300");
 module.exports = {
     // 基本数据设置
     all: true,
-    startDate: "20190101", // 模拟计算的启动日期
+    startDate: "20181201", // 模拟计算的启动日期
     fixCash: true, // 是否固定头寸
     initBalance: 1000000, // 初始资金余额 或 固定头寸金额
     showTrans: true,
@@ -13,18 +13,20 @@ module.exports = {
 
     // 匹配算法选择
     match: {
-        // rules: [rules.swing],
-        // report: rules.swing,
-        rules: [rules.squeeze],
-        report: rules.squeeze,
+        rules: [rules.swing],
+        report: rules.swing,
+        // rules: [rules.squeeze],
+        // report: rules.squeeze,
     },
 
     // 基准测试
     rules: {
-        buy: [rules.squeeze],
+        buy: [rules.swing],
+        sell: [rules.swing],
+        // buy: [rules.squeeze],
         //buy: [rules.outsideday],
         // buy: [rules.benchmark],
-        sell: [rules.stoploss, rules.squeeze], //rules.opensell],
+        // sell: [rules.stoploss, rules.squeeze], //rules.opensell],
         // sell: [rules.benchmark],
     },
     stoploss: {
@@ -100,20 +102,20 @@ module.exports = {
         loss: 0.04,
     },
 
-    selectedStocks: stockList,
-    //     [
-    //     // "601318.SH", // 中国平安
-    //     "600036.SH", // 招商银行
-    //     // "601208.SH", // 东材科技
-    //     // "600489.SH", // 中金黄金
-    //     // "600276.SH", // 恒瑞医药
-    //     // "600363.SH", // 联创光电
-    //     // "000725.SZ", // 京东方A
-    //     // "600298.SH", // 安琪酵母
-    //     // "300027.SZ", // 华谊兄弟
-    //     // "600511.SH", // 国药股份
-    //     // "601606.SH", // 长城军工
-    //     // "601628.SH", // 中国人寿
-    //     // "000568.SZ", // 泸州老窖
-    // ],
+    // selectedStocks: stockList,
+    selectedStocks: [
+        "601318.SH", // 中国平安
+        //     "600036.SH", // 招商银行
+        //     // "601208.SH", // 东材科技
+        //     // "600489.SH", // 中金黄金
+        //     // "600276.SH", // 恒瑞医药
+        //     // "600363.SH", // 联创光电
+        //     // "000725.SZ", // 京东方A
+        //     // "600298.SH", // 安琪酵母
+        //     // "300027.SZ", // 华谊兄弟
+        //     // "600511.SH", // 国药股份
+        //     // "601606.SH", // 长城军工
+        //     // "601628.SH", // 中国人寿
+        //     // "000568.SZ", // 泸州老窖
+    ],
 };

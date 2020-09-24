@@ -2,13 +2,7 @@ const { Command, flags } = require("@oclif/command");
 
 const debug = require("debug")("main:sim");
 
-const {
-    simulate,
-    rules,
-    formatFxstr,
-    engine,
-    reports,
-} = require("@wt/lib-stock");
+const { simulate, rules, utils, engine, reports } = require("@wt/lib-stock");
 
 class SimCommand extends Command {
     async run() {
@@ -51,7 +45,7 @@ class SimCommand extends Command {
         }
 
         this.log(
-            `初始资金:        ${formatFxstr(options.initBalance)}元 
+            `初始资金:        ${utils.formatFxstr(options.initBalance)}元 
 测试交易资金模式:  ${options.fixCash ? "固定头寸" : "累计账户"}
 测试数据周期: ${options.startDate}
 
