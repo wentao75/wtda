@@ -13,8 +13,10 @@ module.exports = {
 
     // 匹配算法选择
     match: {
-        rules: [rules.swing],
-        report: rules.swing,
+        rules: [rules.squeeze, rules.holp, rules.swing],
+        // report: rules.holp,
+        //rules: [rules.swing],
+        // report: rules.swing,
         // rules: [rules.squeeze],
         // report: rules.squeeze,
     },
@@ -79,7 +81,7 @@ module.exports = {
     },
 
     ttmwave: {
-        n: 5,
+        n: 8, //5,
         ma: 21,
         la: 34,
         mb: 55,
@@ -104,6 +106,7 @@ module.exports = {
 
     selectedStocks: stockList,
     // selectedStocks: [
+    //     // "600968.SH",
     //     "601318.SH", // 中国平安
     //     "600036.SH", // 招商银行
     //     "601208.SH", // 东材科技
