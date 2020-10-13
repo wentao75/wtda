@@ -19,8 +19,11 @@ class UpdateCommand extends Command {
         const force = flags.force;
         if (force) logger.debug("强制更新全部数据");
         else logger.debug("更新数据");
-        if (flags.stock) {
+        if (flags.daily) {
             logger.debug("更新股票日线数据");
+        }
+        if (flags.stock) {
+            logger.debug("更新股票信息数据");
         }
         if (flags.finance) {
             logger.debug("更新股票财务数据");
@@ -40,6 +43,7 @@ class UpdateCommand extends Command {
 
         updateData(
             force,
+            flags.daily,
             flags.stock,
             flags.finance,
             flags.mainbiz,
@@ -63,6 +67,11 @@ UpdateCommand.flags = {
         description: "强制更新所有数据",
         default: false,
     }),
+    daily: flags.boolean({
+        char: "d",
+        description: "更新股票日线数据",
+        default: false,
+    }),
     stock: flags.boolean({
         char: "s",
         description: "更新股票信息数据",
@@ -79,7 +88,7 @@ UpdateCommand.flags = {
         default: false,
     }),
     dividend: flags.boolean({
-        char: "d",
+        char: "f",
         description: "更新分红送股数据",
         default: false,
     }),
