@@ -1,5 +1,6 @@
 const { rules } = require("@wt/lib-stock");
 const stockList = require("./hs300");
+// const csi500 = require("./csi500");
 // const favorites = require("./favorites");
 
 module.exports = {
