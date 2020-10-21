@@ -14,7 +14,7 @@ module.exports = {
 
     // 匹配算法选择
     match: {
-        rules: [rules.squeeze, rules.holp, rules.swing],
+        rules: [rules.squeeze, rules.rsi, rules.holp, rules.swing],
         // report: rules.holp,
         //rules: [rules.swing],
         // report: rules.swing,
@@ -24,8 +24,10 @@ module.exports = {
 
     // 基准测试
     rules: {
-        buy: [rules.swing],
-        sell: [rules.swing],
+        buy: [rules.rsi],
+        sell: [rules.rsi],
+        // buy: [rules.swing],
+        // sell: [rules.swing],
         // buy: [rules.squeeze],
         //buy: [rules.outsideday],
         // buy: [rules.benchmark],
@@ -33,7 +35,7 @@ module.exports = {
         // sell: [rules.benchmark],
     },
     stoploss: {
-        S: 0.1, // 止损比例
+        S: 0.06, // 止损比例
     },
     // mmb
     // rules: {
@@ -105,13 +107,22 @@ module.exports = {
         loss: 0.04,
     },
 
+    rsi: {
+        n: 4,
+        ma: 200,
+        long: 30,
+        short: 55,
+
+        digits: 3,
+    },
+
     selectedStocks: stockList,
     // selectedStocks: [
     //     // "600968.SH",
     //     "601318.SH", // 中国平安
-    //     "600036.SH", // 招商银行
-    //     "601208.SH", // 东材科技
-    //     "600489.SH", // 中金黄金
+    //     // "600036.SH", // 招商银行
+    //     // "601208.SH", // 东材科技
+    //     // "600489.SH", // 中金黄金
     //     // "600276.SH", // 恒瑞医药
     //     // "600363.SH", // 联创光电
     //     // "000725.SZ", // 京东方A
