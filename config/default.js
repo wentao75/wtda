@@ -1,6 +1,6 @@
 const { rules } = require("@wt/lib-stock");
 const stockList = require("./hs300");
-// const csi500 = require("./csi500");
+const csi500 = require("./csi500");
 // const favorites = require("./favorites");
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
 
     // 匹配算法选择
     match: {
-        rules: [rules.squeeze, rules.rsi, rules.holp, rules.swing],
+        rules: [rules.squeeze, rules.rsi, rules.vixfix], //, rules.holp, rules.swing],
         // report: rules.holp,
         //rules: [rules.swing],
         // report: rules.swing,
@@ -116,10 +116,22 @@ module.exports = {
         digits: 3,
     },
 
-    selectedStocks: stockList,
+    vixfix: {
+        n: 22,
+        bn: 20,
+        multi: 2.0,
+        lbn: 50,
+        ph: 0.9,
+
+        digits: 3,
+    },
+
+    selectedStocks: [...stockList, ...csi500],
+
     // selectedStocks: [
     //     // "600968.SH",
-    //     "601318.SH", // 中国平安
+    //     "601012.SH",
+    //     // "601318.SH", // 中国平安
     //     // "600036.SH", // 招商银行
     //     // "601208.SH", // 东材科技
     //     // "600489.SH", // 中金黄金
