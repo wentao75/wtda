@@ -85,12 +85,12 @@ module.exports = {
 
     ttmwave: {
         n: 8, //5,
-        ma: 21,
-        la: 34,
-        mb: 55,
-        lb: 89,
-        mc: 144,
-        lc: 233,
+        ma: 34, //21,
+        la: 55, //34,
+        mb: 89, //55,
+        lb: 144, //89,
+        mc: 233, //144,
+        lc: 377, //233,
         useb: true,
         usec: true,
         source: "close",
