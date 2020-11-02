@@ -14,7 +14,7 @@ module.exports = {
 
     // 匹配算法选择
     match: {
-        rules: [rules.squeeze, rules.rsi, rules.vixfix], //, rules.holp, rules.swing],
+        rules: [rules.squeeze, rules.vixfix, rules.swing], //, rules.rsi, rules.holp],
         // report: rules.holp,
         //rules: [rules.swing],
         // report: rules.swing,
