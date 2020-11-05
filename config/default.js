@@ -69,17 +69,18 @@ module.exports = {
     },
 
     squeeze: {
-        source: "close",
-        ma: "ema", // "ma",
+        //source: "close",
+        source: "ohlc",
+        ma: "ma", // "ema",
         n: 20,
         bm: 2,
         km: 1.5,
         mt: "MTM",
         mn: 12,
         mm: 1,
-        tn: 5,
-        tm: 21,
-        tl: 34,
+        tn: 8,
+        tm: 34,
+        tl: 55,
         needSell: false,
     },
 
