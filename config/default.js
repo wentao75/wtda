@@ -1,6 +1,7 @@
 const { rules } = require("@wt/lib-stock");
 const stockList = require("./hs300");
 const csi500 = require("./csi500");
+const actives = require("./actives");
 // const favorites = require("./favorites");
 
 module.exports = {
@@ -127,7 +128,7 @@ module.exports = {
         digits: 3,
     },
 
-    selectedStocks: [...stockList, ...csi500],
+    selectedStocks: [...actives, ...stockList, ...csi500],
 
     // selectedStocks: [
     //     // "600968.SH",
