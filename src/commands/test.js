@@ -22,7 +22,7 @@ const logger = pino({
 class TestCommand extends Command {
     async run() {
         const { flags, args } = this.parse(TestCommand);
-        await updateStockInfoData(args.dataType, args.code, flags.force);
+        // await updateStockInfoData(args.dataType, args.code, flags.force);
 
         // if (flags.all || flags.stock) {
         //     //await updateDailyData(flags.code, flags.force, "S");

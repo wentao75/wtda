@@ -7,7 +7,8 @@ const actives = require("./actives");
 module.exports = {
     // 基本数据设置
     all: false,
-    startDate: "20181201", // 模拟计算的启动日期
+    // startDate: "20181201", // 模拟计算的启动日期
+    startDate: "19900101", // 模拟计算的启动日期
     fixCash: true, // 是否固定头寸
     initBalance: 1000000, // 初始资金余额 或 固定头寸金额
     showTrans: true,
@@ -15,13 +16,16 @@ module.exports = {
 
     // 匹配算法选择
     match: {
-        rules: [rules.squeeze, rules.vixfix, rules.swing], //, rules.rsi, rules.holp],
+        rules: [rules.everyday],
+        // rules: [rules.squeeze, rules.vixfix, rules.swing], //, rules.rsi, rules.holp],
         // report: rules.holp,
         //rules: [rules.swing],
         // report: rules.swing,
         // rules: [rules.squeeze],
         // report: rules.squeeze,
     },
+
+    everyday: undefined,
 
     // 基准测试
     rules: {
@@ -130,6 +134,7 @@ module.exports = {
 
     selectedStocks: [...actives, ...stockList, ...csi500],
 
+    // selectedStocks: ["600085.SH"],
     // selectedStocks: [
     //     // "600968.SH",
     //     "601012.SH",

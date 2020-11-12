@@ -33,7 +33,7 @@ MatchCommand.flags = {
     startdate: flags.string({
         char: "d",
         description: "模拟计算的启动日期",
-        default: "20190101",
+        // default: "20190101",
     }),
 };
 
