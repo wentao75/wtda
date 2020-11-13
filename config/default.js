@@ -25,7 +25,9 @@ module.exports = {
         // report: rules.squeeze,
     },
 
-    everyday: undefined,
+    everyday: {
+        usewb: true,
+    },
 
     // 基准测试
     rules: {
