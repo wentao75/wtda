@@ -21,7 +21,7 @@ $ npm install -g wtda
 $ wtda COMMAND
 running command...
 $ wtda (-v|--version|version)
-wtda/0.0.1 darwin-x64 node-v10.20.1
+wtda/0.0.1 darwin-x64 node-v10.21.0
 $ wtda --help [COMMAND]
 USAGE
   $ wtda COMMAND
@@ -32,6 +32,7 @@ USAGE
 # 命令
 
 <!-- commands -->
+* [`wtda check`](#wtda-check)
 * [`wtda clear`](#wtda-clear)
 * [`wtda deal TASK [CODE]`](#wtda-deal-task-code)
 * [`wtda help [COMMAND]`](#wtda-help-command)
@@ -39,6 +40,24 @@ USAGE
 * [`wtda sim`](#wtda-sim)
 * [`wtda test DATATYPE CODE`](#wtda-test-datatype-code)
 * [`wtda update`](#wtda-update)
+
+## `wtda check`
+
+Describe the command here
+
+```
+USAGE
+  $ wtda check
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/check.js](https://github.com/wentao75/wtda/blob/v0.0.1/src/commands/check.js)_
 
 ## `wtda clear`
 
@@ -93,25 +112,25 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.0.0
 
 ## `wtda match`
 
-Describe the command here
+查找匹配规则/模式
 
 ```
 USAGE
   $ wtda match
 
 OPTIONS
-  -n, --name=name  name to print
+  -d, --startdate=startdate  模拟计算的启动日期
 
 DESCRIPTION
   ...
-  Extra documentation goes here
+  根据配置查找符合规则/模式的数据
 ```
 
 _See code: [src/commands/match.js](https://github.com/wentao75/wtda/blob/v0.0.1/src/commands/match.js)_
 
 ## `wtda sim`
 
-Describe the command here
+数据分析模拟
 
 ```
 USAGE
@@ -132,7 +151,7 @@ OPTIONS
 
 DESCRIPTION
   ...
-  数据分析算法入口
+  数据分析模拟入口
 ```
 
 _See code: [src/commands/sim.js](https://github.com/wentao75/wtda/blob/v0.0.1/src/commands/sim.js)_
@@ -169,7 +188,8 @@ USAGE
   $ wtda update
 
 OPTIONS
-  -d, --dividend  更新分红送股数据
+  -d, --daily     更新股票日线数据
+  -f, --dividend  更新分红送股数据
   -f, --force     强制更新所有数据
   -i, --index     更新指数数据
   -m, --mainbiz   更新主营业务数据

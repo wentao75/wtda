@@ -2,7 +2,7 @@ const { rules } = require("@wt/lib-stock");
 const stockList = require("./hs300");
 const csi500 = require("./csi500");
 const actives = require("./actives");
-// const favorites = require("./favorites");
+const favorites = require("./favorites");
 
 module.exports = {
     // 基本数据设置
@@ -16,13 +16,8 @@ module.exports = {
 
     // 匹配算法选择
     match: {
-        rules: [rules.everyday],
+        rules: [rules.everyday, rules.squeeze, rules.swing],
         // rules: [rules.squeeze, rules.vixfix, rules.swing], //, rules.rsi, rules.holp],
-        // report: rules.holp,
-        //rules: [rules.swing],
-        // report: rules.swing,
-        // rules: [rules.squeeze],
-        // report: rules.squeeze,
     },
 
     everyday: {
@@ -44,11 +39,7 @@ module.exports = {
     stoploss: {
         S: 0.06, // 止损比例
     },
-    // mmb
-    // rules: {
-    //     buy: [rules.mmb],
-    //     sell: [rules.stoploss, rules.mmb],
-    // },
+
     mmb: {
         N: 1, // 动能平均天数
         P: 0.5, // 动能突破买入百分比
@@ -134,7 +125,9 @@ module.exports = {
         digits: 3,
     },
 
-    selectedStocks: [...actives, ...stockList, ...csi500],
+    selectedStocks: Array.from(
+        new Set([...favorites, ...actives, ...stockList, ...csi500])
+    ),
 
     // selectedStocks: ["600085.SH"],
     // selectedStocks: [
