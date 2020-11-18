@@ -1,4 +1,4 @@
-// const { Command, flags } = require("@oclif/command");
+const { Command } = require("@oclif/command");
 
 class CheckCommand extends Command {
     async run() {
