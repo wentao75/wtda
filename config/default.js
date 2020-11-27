@@ -13,6 +13,7 @@ module.exports = {
     initBalance: 1000000, // 初始资金余额 或 固定头寸金额
     showTrans: true,
     showWorkdays: false,
+    includeSell: false, // 是否包含卖出信号
 
     // 匹配算法选择
     match: {
