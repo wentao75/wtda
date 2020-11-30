@@ -22,7 +22,8 @@ module.exports = {
     },
 
     everyday: {
-        usewb: true,
+        usewb: true, // 使用中期趋势
+        longLevel: 1, // 正常信号买入趋势的最小等级（1～5)
     },
 
     // 基准测试
