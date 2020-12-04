@@ -128,7 +128,7 @@ module.exports = {
     },
 
     selectedStocks: Array.from(
-        new Set([...favorites, ...actives, ...stockList, ...csi500])
+        new Set([...favorites, ...actives]) //, ...stockList, ...csi500])
     ),
 
     // selectedStocks: ["600085.SH"],
