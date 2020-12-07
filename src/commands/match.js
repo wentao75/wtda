@@ -19,6 +19,9 @@ class MatchCommand extends Command {
         // 通过配置文件获得对应的基础配置信息
         const options = require("config");
         if (flags.startdate) options.startDate = flags.startdate;
+        if (!flags.selected) {
+            options.selectedStocks = options.allStocks;
+        }
 
         await search.search(options);
     }
@@ -34,6 +37,11 @@ MatchCommand.flags = {
         char: "d",
         description: "模拟计算的启动日期",
         // default: "20190101",
+    }),
+    selected: flags.boolean({
+        char: "s",
+        description: "只使用自选",
+        default: false,
     }),
 };
 

@@ -127,6 +127,10 @@ module.exports = {
         digits: 3,
     },
 
+    allStocks: Array.from(
+        new Set([...favorites, ...actives, ...stockList, ...csi500])
+    ),
+
     selectedStocks: Array.from(
         new Set([...favorites, ...actives]) //, ...stockList, ...csi500])
     ),
