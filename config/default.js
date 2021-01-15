@@ -17,7 +17,8 @@ module.exports = {
 
     // 匹配算法选择
     match: {
-        rules: [rules.everyday, rules.squeeze, rules.swing],
+        rules: [rules.everyday, rules.squeeze],
+        // rules: [rules.everyday, rules.squeeze, rules.swing],
         // rules: [rules.squeeze, rules.vixfix, rules.swing], //, rules.rsi, rules.holp],
     },
 
