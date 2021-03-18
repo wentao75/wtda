@@ -1,5 +1,5 @@
 const { rules } = require("@wt/lib-stock");
-const stockList = require("./hs300_2020_10");
+const stockList = require("./hs300");
 const csi500 = require("./csi500");
 const actives = require("./actives");
 const favorites = require("./favorites");
