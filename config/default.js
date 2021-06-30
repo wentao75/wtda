@@ -17,7 +17,7 @@ module.exports = {
 
     // 匹配算法选择
     match: {
-        rules: [rules.everyday, rules.squeeze],
+        rules: [rules.everyday, rules.squeeze, rules.trend],
         // rules: [rules.everyday, rules.squeeze, rules.swing],
         // rules: [rules.squeeze, rules.vixfix, rules.swing], //, rules.rsi, rules.holp],
     },
@@ -107,6 +107,14 @@ module.exports = {
         earn1: 0.04,
         earn2: 0.08,
         loss: 0.04,
+    },
+
+    trend: {
+        n: 8,
+        m: 21,
+        l: 50,
+        atrlen: 20,
+        digits: 3,
     },
 
     rsi: {
